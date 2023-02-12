@@ -4,16 +4,24 @@
   --body_color1: #f0eabe;
   --body_color2: #bfead7;
 }
-
+@font-face {
+  font-family: "arb-fonts";
+  src: url(../Fonts/ArbFONTS-Questv1-Regular.otf);
+}
 /* -------------------------------------------------start stander */
 *,
 body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Cairo", sans-serif;
-  margin: 0;
+  font-family: "arb-fonts", sans-serif;
   color: #fff;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }
 body {
   position: relative;
@@ -21,7 +29,7 @@ body {
 }
 
 main {
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   background: linear-gradient(to right, var(--body_color1), var(--body_color2));
   min-height: 100vh;
   display: flex;
@@ -30,28 +38,32 @@ main {
 }
 main > div {
   background-color: #fff;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.8rem;
-  height: 93vh;
+  height: calc(100vh - 4rem);
   overflow: hidden;
-}
-/* style for menu element */
-main .menu {
-  width: 36%;
-  padding-bottom: 0;
-}
-main .menu .menu-title {
   display: flex;
+  flex-direction: column;
+}
+/* start style of left side */
+main .left-side {
+  width: 36%;
+}
+main .left-side .left-side-title {
+  display: flex;
+  width: 100%;
+  height: 4.5rem;
   align-items: center;
   justify-content: space-between;
   padding: 0.4rem 15%;
   background-color: var(--main_color);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-size: 2rem;
   position: relative;
   margin-bottom: 1.5rem;
+  position: relative;
 }
-main .menu .menu-title::after {
+main .left-side .left-side-title::after {
   content: "";
   background-color: #fff;
   width: 0.1rem;
@@ -61,320 +73,319 @@ main .menu .menu-title::after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .menu .items {
+main .left-side .left-side-content {
+  width: 100%;
+  flex: 1;
+  border-radius: 0.5rem;
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
   flex-wrap: wrap;
+  flex-direction: column;
 }
-main .menu .items .item {
-  width: 48%;
-  border-radius: 0.8rem;
+main .left-side .left-side-content .items {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex: 1;
+}
+main .left-side .left-side-content .items:first-of-type {
+  margin-bottom: 0.5rem;
+}
+main .left-side .left-side-content .items:last-of-type {
+  margin-top: 0.5rem;
+}
+main .left-side .left-side-content .items .item {
+  width: 48.5%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 1rem;
   overflow: hidden;
-  margin-bottom: 4%;
-  transition: all 0.3s ease-in-out;
 }
-main .menu .items .item:hover {
-  transform: scale(1.03);
+main .left-side .left-side-content .items .item .item-img {
+  flex: 1;
 }
-main .menu .items .item img {
+main .left-side .left-side-content .items .item .item-img img {
   width: 100%;
-  height: 20rem;
+  height: 100%;
 }
-main .menu .items .item .item-desc {
-  background-color: var(--main_color);
+main .left-side .left-side-content .items .item .item-desc {
   display: flex;
-  width: 100%;
   align-items: center;
+  background-color: var(--main_color);
   justify-content: space-between;
-  padding: 0.4rem 1rem;
+  padding: 0.1rem 1rem;
 }
-main .menu .items .item .item-desc p {
+main .left-side .left-side-content .items .item .item-desc p {
   margin: 0;
   font-size: 1rem;
 }
-main .menu .items .item .item-desc p.price {
-  font-size: 1.3rem;
+main .left-side .left-side-content .items .item .item-desc p.price {
+  font-size: 2rem;
 }
-main .menu .items .item .item-desc p.price span {
-  font-size: 0.8rem;
+main .left-side .left-side-content .items .item .item-desc p.price span {
+  font-size: 0.9rem;
 }
-/* style for story element */
-main .story {
+
+/* start style of center side */
+main .center-side {
   width: 24%;
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
   flex-wrap: wrap;
 }
-main .story .story-img {
-  height: 72%;
+main .center-side .story-img {
+  flex: 3;
   width: 100%;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
-main .story .story-img img {
+main .center-side .story-img img {
   height: 100%;
   width: 100%;
 }
-main .story .cone {
+main .center-side .cone-desc {
   width: 100%;
-  height: 26%;
-  margin-top: 2%;
+  margin-top: 1rem;
   background-color: var(--main_color);
-  border-radius: 0.8rem;
-  padding: 1rem 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
   text-align: center;
   display: flex;
   justify-content: center;
 }
-main .story .cone div > p:nth-of-type(1) {
-  font-size: 3rem;
+
+main .center-side .cone-desc div > p {
+  margin: 0;
 }
-main .story .cone div > p:nth-of-type(2) {
+main .center-side .cone-desc div > p:nth-of-type(1) {
+  font-size: 2.8rem;
+}
+main .center-side .cone-desc div > p:nth-of-type(2) {
   font-size: 1.3rem;
-  margin-top: -0.5rem;
   margin-bottom: 0.8rem;
 }
-main .story .cone div > p:nth-of-type(3) {
+main .center-side .cone-desc div > p:nth-of-type(3) {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
   margin-top: 0.4rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
-main .story .cone div > p:nth-of-type(3) svg {
+main .center-side .cone-desc div > p:nth-of-type(3) svg {
   width: 1.5rem;
   margin-right: 0.6rem;
 }
-/* style for vedio element */
-main .vedio {
+/* start style of right side */
+main .right-side {
   width: 36%;
   display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-main .vedio .logo {
+main .right-side .logo {
   width: 100%;
-  height: 30%;
+  flex: 3;
   overflow: hidden;
-  border-radius: 0.6rem;
+  border-radius: 1rem;
 }
-main .vedio .logo img {
+main .right-side .logo img {
   width: 100%;
   height: 100%;
 }
-main .vedio .video-elem {
-  height: 40%;
-  margin: 2% 0;
+main .right-side .video-elem {
+  margin: 1rem 0;
   width: 100%;
-  border-radius: 0.8rem;
+  flex: 4;
+  border-radius: 1rem;
   overflow: hidden;
 }
-main .vedio .video-elem iframe {
+main .right-side .video-elem iframe {
   width: 100%;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   height: 100%;
 }
-main .vedio .time-elem {
+main .right-side .time-elem {
   background-color: var(--main_color);
   width: 100%;
-  border-radius: 0.8rem;
-  padding: 2rem;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 26%;
+  flex: 1;
 }
-main .vedio .time-elem .date {
+main .right-side .time-elem .date {
   width: 70%;
   height: 100%;
 }
-main .vedio .time-elem .logo-wasla {
+main .right-side .time-elem .logo-wasla {
   height: 100%;
   width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-main .vedio .time-elem .logo-wasla img {
-  width: 5rem;
+main .right-side .time-elem .logo-wasla img {
+  width: 5.5rem;
 }
-main .vedio .time-elem .date {
+main .right-side .time-elem .date {
   display: flex;
   flex-wrap: wrap;
   border-right: 2px solid #fff;
   padding-right: 3rem;
 }
-main .vedio .time-elem .date > p {
+main .right-side .time-elem .date > p {
   text-align: right;
-  font-size: 2.2em;
+  margin: 0rem;
+  font-size: 2.3em;
   width: 100%;
 }
-main .vedio .time-elem .date .time {
+main .right-side .time-elem .date .time {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-around;
-  margin-top: -1rem;
+  margin-bottom: -1rem;
 }
-main .vedio .time-elem .date .time span {
-  font-size: 4rem;
+main .right-side .time-elem .date .time span {
+  font-size: 4.5rem;
+  margin-bottom: 0rem;
 }
-main .vedio .am-bm {
+main .right-side .am-bm {
   margin-right: 1rem;
   font-size: 1.5rem !important;
 }
 @media (max-width: 1700px) {
   main {
-    padding: 1rem 1rem;
+    padding: 1.2rem;
   }
   main > div {
     padding: 1rem;
     border-radius: 0.6rem;
-    height: 94vh;
+    height: calc(100vh - 2.4rem);
   }
-  /* style for menu element */
-  main .menu .menu-title {
-    padding: 0.4rem 10%;
-    font-size: 1.3rem;
+  main .left-side .left-side-title {
+    height: 3.7rem;
+    padding: 0.3rem 10%;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+  main .left-side .left-side-title::after {
+    height: 60%;
+  }
 
-  main .menu .items .item {
-    width: 48.5%;
-    border-radius: 0.6rem;
-    margin-bottom: 3%;
-  }
-  main .menu .items .item:hover {
-    transform: scale(1.02);
-  }
-  main .menu .items .item img {
-    height: 13.1rem;
-  }
-  main .menu .items .item .item-desc {
-    padding: 0.3rem 1rem;
-  }
-  main .menu .items .item .item-desc p {
-    font-size: 0.8rem;
-  }
-  main .menu .items .item .item-desc p.price {
-    font-size: 1.1rem;
-  }
-  main .menu .items .item .item-desc p.price span {
-    font-size: 0.6rem;
-  }
-  /* style for story element */
-  main .story .story-img {
+  main .left-side .left-side-content .items .item {
     border-radius: 0.6rem;
   }
 
-  main .story .cone {
+  main .left-side .left-side-content .items .item .item-desc p {
+    font-size: 0.9rem;
+  }
+  main .left-side .left-side-content .items .item .item-desc p.price {
+    font-size: 1.5rem;
+  }
+  main .left-side .left-side-content .items .item .item-desc p.price span {
+    font-size: 0.7rem;
+  }
+  /* start style of center side */
+
+  main .center-side .story-img {
     border-radius: 0.6rem;
-    padding: 1rem;
   }
-  main .story .cone div > p:nth-of-type(1) {
-    font-size: 2.2rem;
-    margin-top: -0.8rem;
+  main .center-side .cone-desc {
+    border-radius: 0.6rem;
   }
-  main .story .cone div > p:nth-of-type(2) {
-    font-size: 1rem;
-    margin-top: -0.6rem;
+
+  main .center-side .cone-desc div > p:nth-of-type(1) {
+    font-size: 2rem;
+  }
+  main .center-side .cone-desc div > p:nth-of-type(2) {
+    font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
-  main .story .cone div > p:nth-of-type(3) {
-    font-size: 1.2rem;
+  main .center-side .cone-desc div > p:nth-of-type(3) {
+    margin-bottom: 0.3rem;
+    margin-top: 0.4rem;
+    font-size: 1.4rem;
   }
-  main .story .cone div > p:nth-of-type(3) svg {
-    width: 1rem;
+  main .center-side .cone-desc div > p:nth-of-type(3) svg {
+    width: 1.2rem;
+    margin-right: 0.4rem;
   }
-  /* style for vedio element */
+  /* start style of right side */
 
-  main .vedio .time-elem {
-    border-radius: 0.8rem;
-    padding: 1rem;
-    height: 26%;
+  main .right-side .logo {
+    border-radius: 0.6rem;
   }
-  main .vedio .time-elem .date {
-    width: 70%;
-    height: 100%;
+
+  main .right-side .video-elem {
+    border-radius: 0.6rem;
+  }
+  main .right-side .video-elem iframe {
+    border-radius: 0.6rem;
+  }
+  main .right-side .time-elem {
+    border-radius: 0.6rem;
+    padding: 1.5rem 1rem;
+  }
+
+  main .right-side .time-elem .logo-wasla img {
+    width: 4rem;
+  }
+  main .right-side .time-elem .date {
     border-right: 1px solid #fff;
     padding-right: 2rem;
   }
-  main .vedio .time-elem .logo-wasla {
-    height: 100%;
-    width: 30%;
-  }
-  main .vedio .time-elem .logo-wasla img {
-    width: 3.5rem;
-  }
-
-  main .vedio .time-elem .date > p {
+  main .right-side .time-elem .date > p {
     font-size: 1.5em;
   }
-
-  main .vedio .time-elem .date .time span {
-    font-size: 2.5rem;
+  main .right-side .time-elem .date .time {
+    margin-bottom: -0.5rem;
   }
-  main .vedio .am-bm {
-    margin-right: 1rem;
+  main .right-side .time-elem .date .time span {
+    font-size: 3.5rem;
+  }
+  main .right-side .am-bm {
+    margin-right: 0.5rem;
     font-size: 1rem !important;
   }
 }
 @media (max-width: 1200px) {
-  /* style for menu element */
-  main .menu .menu-title {
-    font-size: 1.1rem;
+  main {
+    padding: 1rem;
   }
 
-  main .menu .items .item img {
-    height: 11rem;
+  main .left-side .left-side-content .items .item .item-desc p {
+    font-size: 0.8rem;
   }
-
-  main .menu .items .item .item-desc p {
+  main .left-side .left-side-content .items .item .item-desc p.price {
+    font-size: 1.3rem;
+  }
+  main .left-side .left-side-content .items .item .item-desc p.price span {
     font-size: 0.6rem;
   }
-  main .menu .items .item .item-desc p.price {
-    font-size: 1rem;
-  }
-  main .menu .items .item .item-desc p.price span {
-    font-size: 0.5rem;
-  }
-  /* style for story element */
 
-  main .story .cone div > p:nth-of-type(1) {
-    font-size: 1.5rem;
-    margin-top: -0.2rem;
-  }
-  main .story .cone div > p:nth-of-type(2) {
-    font-size: 0.7rem;
-    margin-top: -0.2rem;
-    margin-bottom: 0.4rem;
-  }
-  main .story .cone div > p:nth-of-type(3) {
-    font-size: 1rem;
-  }
-  main .story .cone div > p:nth-of-type(3) svg {
-    width: 0.8rem;
-  }
-  /* style for vedio element */
+  /* start style of right side */
 
-  main .vedio .time-elem .logo-wasla img {
-    width: 3rem;
+  main .right-side .time-elem {
+    padding: 1rem;
   }
 
-  main .vedio .time-elem .date > p {
-    font-size: 1.1em;
+  main .right-side .time-elem .logo-wasla img {
+    width: 3.5rem;
   }
 
-  main .vedio .time-elem .date .time span {
-    font-size: 1.8rem;
+  main .right-side .time-elem .date > p {
+    font-size: 1.2em;
   }
-  main .vedio .am-bm {
-    margin-right: 0.6rem;
-    font-size: 0.8rem !important;
+
+  main .right-side .time-elem .date .time span {
+    font-size: 3rem;
+  }
+  main .right-side .am-bm {
+    font-size: 0.9rem !important;
   }
 }
 @media (max-width: 992px) {
@@ -382,23 +393,12 @@ main .vedio .am-bm {
     display: block;
   }
   main > div {
-    width: 80% !important;
-    margin: 0 10% 1rem !important;
-    height: unset !important;
-  }
-  main .story .story-img {
-    height: 40rem;
-  }
-  main .vedio .video-elem {
-    height: 20rem;
-  }
-  main .vedio .time-elem {
-    height: 10rem;
+    width: 90% !important;
+    margin: 1rem auto !important;
   }
 }
 @media (max-width: 576px) {
   main > div {
     width: 100% !important;
-    margin: 1rem 0 !important;
   }
 }
