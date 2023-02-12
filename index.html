@@ -10,6 +10,8 @@
     <meta name="description" content="project" />
     <!-- Link style CSS -->
     <link rel="stylesheet" href="./css/index.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
   </head>
   <body>
     <main>
@@ -22,14 +24,20 @@
         <div class="left-side-content">
           <div class="items">
             <!-- item -->
-            <div class="item">
-              <div class="item-img">
-                <img src="./imges/item.png" alt="" />
-                <img src="./imges/item2.png" alt="" />
-                <img src="./imges/item.png" alt="" />
-                <img src="./imges/item2.png" alt="" />
-                <img src="./imges/item.png" alt="" />
-                <img src="./imges/item2.png" alt="" />
+            <div class="item itemImgSwiper">
+              <div class="item-img wrapper swiper-wrapper">
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
               </div>
               <div class="item-desc">
                 <p class="price">20 <span>$</span></p>
@@ -37,26 +45,20 @@
               </div>
             </div>
             <!-- item -->
-            <div class="item">
-              <div class="item-img">
-                <img src="./imges/item.png" alt="" />
-                <img src="./imges/item2.png" alt="" />
-                <img src="./imges/item.png" alt="" />
-                <img src="./imges/item2.png" alt="" />
-                <img src="./imges/item.png" alt="" />
-                <img src="./imges/item2.png" alt="" />
-              </div>
-              <div class="item-desc">
-                <p class="price">20 <span>$</span></p>
-                <p>عصير اللوتس</p>
-              </div>
-            </div>
-          </div>
-          <div class="items">
-            <!-- item -->
-            <div class="item">
-              <div class="item-img">
-                <img src="./imges/item.png" alt="" />
+            <div class="item itemImgSwiper">
+              <div class="item-img wrapper swiper-wrapper">
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
               </div>
               <div class="item-desc">
                 <p class="price">20 <span>$</span></p>
@@ -64,9 +66,41 @@
               </div>
             </div>
             <!-- item -->
-            <div class="item">
-              <div class="item-img">
-                <img src="./imges/item.png" alt="" />
+            <div class="item itemImgSwiper">
+              <div class="item-img wrapper swiper-wrapper">
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
+              </div>
+              <div class="item-desc">
+                <p class="price">20 <span>$</span></p>
+                <p>عصير اللوتس</p>
+              </div>
+            </div>
+            <!-- item -->
+            <div class="item itemImgSwiper">
+              <div class="item-img wrapper swiper-wrapper">
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
+                <img src="./imges/item.png" alt="" class="slide swiper-slide" />
+                <img
+                  src="./imges/item2.png"
+                  alt=""
+                  class="slide swiper-slide"
+                />
               </div>
               <div class="item-desc">
                 <p class="price">20 <span>$</span></p>
@@ -80,7 +114,15 @@
       <!-- start center-side -->
       <div class="center-side">
         <div class="story-img">
-          <img src="./imges/story.png" alt="story" />
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/U9aGbgygaUE?autoplay=1&loop=1&rel=0&showinfo=0&mute=1&color=white&playlist=U9aGbgygaUE"
+            allow="autoplay"
+            frameborder="0"
+            controls="false"
+            loop="true"
+          ></iframe>
         </div>
         <div class="cone-desc">
           <div>
@@ -103,13 +145,21 @@
         </div>
       </div>
       <!-- end center-side -->
+
       <!-- start right-side -->
       <div class="right-side">
         <div class="logo">
           <img src="./imges/logo.png" alt="" />
         </div>
         <div class="video-elem">
-          <iframe width="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+          <iframe
+            width="100%"
+            src="http://www.youtube.com/embed/GRonxog5mbw?autoplay=1&loop=1&rel=0&showinfo=0&mute=1&color=white&iv_load_policy=3&playlist=GRonxog5mbw"
+            allow="autoplay"
+            frameborder="0"
+            controls="false"
+            loop="true"
+          >
           </iframe>
         </div>
         <div class="time-elem">
@@ -129,5 +179,20 @@
       <!-- end right-side -->
     </main>
     <script src="./js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".itemImgSwiper", {
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 0,
+        effect: "fade",
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: true,
+        },
+      });
+    </script>
   </body>
 </html>
