@@ -23,7 +23,7 @@ body {
   display: block;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 body {
   position: relative;
@@ -64,7 +64,7 @@ main .left-side .left-side-title {
   margin-bottom: 1.5rem;
   position: relative;
 }
-main .left-side .left-side-title span{
+main .left-side .left-side-title span {
   width: 50%;
   text-align: center;
 }
@@ -88,7 +88,7 @@ main .left-side .left-side-content {
 }
 main .left-side .left-side-content .items {
   display: flex;
-  width: 100%;
+  width: 100% !important;
   flex-wrap: wrap;
   justify-content: space-between;
   flex: 1;
@@ -193,7 +193,8 @@ main .right-side .logo {
   width: 100%;
   flex: 3;
   overflow: hidden;
-  border-radius: 1rem;background-color: var(--main_color);
+  border-radius: 1rem;
+  background-color: var(--main_color);
   display: flex;
   align-items: center;
   justify-content: center;
